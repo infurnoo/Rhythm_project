@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://cykes6cifphec"]
+
+[ext_resource type="Texture2D" uid="uid://d2tyc4ad0fj51" path="res://Sprites/Arrows_Sprites.png" id="1_5185a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0eoy"]
+atlas = ExtResource("1_5185a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpou5"]
+atlas = ExtResource("1_5185a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bb8t"]
+atlas = ExtResource("1_5185a")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceujb"]
+atlas = ExtResource("1_5185a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmy6m"]
+atlas = ExtResource("1_5185a")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfpdq"]
+atlas = ExtResource("1_5185a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxhu0"]
+atlas = ExtResource("1_5185a")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dqaa"]
+atlas = ExtResource("1_5185a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhmtq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0eoy")
+}],
+"loop": false,
+"name": &"0_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpou5")
+}],
+"loop": false,
+"name": &"0_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bb8t")
+}],
+"loop": false,
+"name": &"1_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceujb")
+}],
+"loop": false,
+"name": &"1_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmy6m")
+}],
+"loop": false,
+"name": &"2_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfpdq")
+}],
+"loop": false,
+"name": &"2_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhu0")
+}],
+"loop": false,
+"name": &"3_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dqaa")
+}],
+"loop": false,
+"name": &"3_receptor",
+"speed": 5.0
+}]
+
+[node name="NOTE" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_lhmtq")
+animation = &"0_incoming"
