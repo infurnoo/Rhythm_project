@@ -15,6 +15,10 @@ run/main_scene="res://Scripts/Playstate.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameHandler="*res://Scripts/GameHandler.gd"
+
 [display]
 
 window/size/viewport_width=640

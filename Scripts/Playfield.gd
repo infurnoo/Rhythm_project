@@ -11,6 +11,7 @@ func _process(delta):
 	for i in range(4):
 		var Receptor = Receptors[i]
 		Receptor.scale = Receptor.scale.lerp(Vector2(1,1),delta * 7)
-		if Input.is_action_pressed("Lane_%s_Press" % i):
+		if Input.is_action_just_pressed("Lane_%s_Press" % i):
+			GameHandler.LanePressed.emit(i)
 			Receptor.scale = Vector2(1.2, 0.833333333)
 	

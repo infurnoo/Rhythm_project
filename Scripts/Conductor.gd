@@ -10,7 +10,7 @@ signal section_hit(section : int)
 var bpm := 100.0
 var crochet := (60/bpm) * 1000
 var stepCrochet := crochet/4
-var songPosition := 0.0
+var songPosition := -INF
 var Offset := 0.0
 
 var inCountdown := false
@@ -64,6 +64,7 @@ func setBPM(newBPM):
 	self.stepCrochet = self.crochet/4
 
 func StartSong():
+	print('song started')
 	self.songPosition = -self.crochet * 4
 	self.inCountdown = true
 	self.set_process(true)
@@ -94,9 +95,9 @@ func _process(elapsed):
 		self.songPosition *= 1000
 	else:
 		self.songPosition += elapsed*1000
-	
 	if self.inCountdown and self.songPosition >= 0:
 		self.inCountdown = false
+		print('song  ? ? ?')
 		self.play(0)
 
 	var lastChange = getLastBPMChange()

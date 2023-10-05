@@ -1,7 +1,106 @@
-[gd_scene load_steps=3 format=3 uid="uid://ilcb34evgcyd"]
+[gd_scene load_steps=12 format=3 uid="uid://ilcb34evgcyd"]
 
 [ext_resource type="Script" path="res://Scripts/Playfield.gd" id="1_2cpof"]
-[ext_resource type="PackedScene" uid="uid://cykes6cifphec" path="res://NOTE.tscn" id="2_7vmur"]
+[ext_resource type="Texture2D" uid="uid://d2tyc4ad0fj51" path="res://Sprites/Arrows_Sprites.png" id="2_w8yer"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0eoy"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpou5"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bb8t"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceujb"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmy6m"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfpdq"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxhu0"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dqaa"]
+atlas = ExtResource("2_w8yer")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhmtq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0eoy")
+}],
+"loop": false,
+"name": &"0_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpou5")
+}],
+"loop": false,
+"name": &"0_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bb8t")
+}],
+"loop": false,
+"name": &"1_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceujb")
+}],
+"loop": false,
+"name": &"1_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmy6m")
+}],
+"loop": false,
+"name": &"2_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfpdq")
+}],
+"loop": false,
+"name": &"2_receptor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhu0")
+}],
+"loop": false,
+"name": &"3_incoming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dqaa")
+}],
+"loop": false,
+"name": &"3_receptor",
+"speed": 5.0
+}]
 
 [node name="Playfield" type="Node2D"]
 script = ExtResource("1_2cpof")
@@ -20,8 +119,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.447059)
 
-[node name="left" parent="." instance=ExtResource("2_7vmur")]
+[node name="left" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-48, 0)
+sprite_frames = SubResource("SpriteFrames_lhmtq")
 animation = &"0_receptor"
 
 [node name="Line2D" type="Line2D" parent="left"]
@@ -29,8 +130,10 @@ z_index = -1
 points = PackedVector2Array(0, 0, 0, -300)
 width = 2.0
 
-[node name="down" parent="." instance=ExtResource("2_7vmur")]
+[node name="down" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-16, 0)
+sprite_frames = SubResource("SpriteFrames_lhmtq")
 animation = &"1_receptor"
 
 [node name="Line2D" type="Line2D" parent="down"]
@@ -38,8 +141,10 @@ z_index = -1
 points = PackedVector2Array(0, 0, 0, -300)
 width = 2.0
 
-[node name="up" parent="." instance=ExtResource("2_7vmur")]
+[node name="up" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(16, 0)
+sprite_frames = SubResource("SpriteFrames_lhmtq")
 animation = &"2_receptor"
 
 [node name="Line2D" type="Line2D" parent="up"]
@@ -47,8 +152,10 @@ z_index = -1
 points = PackedVector2Array(0, 0, 0, -300)
 width = 2.0
 
-[node name="right" parent="." instance=ExtResource("2_7vmur")]
+[node name="right" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(48, 0)
+sprite_frames = SubResource("SpriteFrames_lhmtq")
 animation = &"3_receptor"
 
 [node name="Line2D" type="Line2D" parent="right"]
