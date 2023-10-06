@@ -1,4 +1,5 @@
 class_name Conductor
+# class used to track the beat of the song
 extends AudioStreamPlayer
 
 var song = null
@@ -8,10 +9,14 @@ signal beat_hit(beat : int)
 signal section_hit(section : int)
 
 var bpm := 100.0
+# time between beats
 var crochet := (60/bpm) * 1000
+# time between steps
 var stepCrochet := crochet/4
 var songPosition := -INF
+# to offset chart by an amount
 var Offset := 0.0
+
 
 var inCountdown := false
 
@@ -65,6 +70,7 @@ func setBPM(newBPM):
 
 func StartSong():
 	print('song started')
+	# set to negative time to allow for notes to spawn
 	self.songPosition = -self.crochet * 4
 	self.inCountdown = true
 	self.set_process(true)
@@ -97,7 +103,7 @@ func _process(elapsed):
 		self.songPosition += elapsed*1000
 	if self.inCountdown and self.songPosition >= 0:
 		self.inCountdown = false
-		print('song  ? ? ?')
+		print('song ')
 		self.play(0)
 
 	var lastChange = getLastBPMChange()

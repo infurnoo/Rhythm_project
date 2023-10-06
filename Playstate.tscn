@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjehebpa6hb1w"]
+
+[ext_resource type="PackedScene" uid="uid://ilcb34evgcyd" path="res://Playfield.tscn" id="1_1cxk2"]
+[ext_resource type="Script" path="res://Scripts/NewPlaystate.gd" id="1_n5bnh"]
+[ext_resource type="Texture2D" uid="uid://qyclpfnaqgpo" path="res://Sprites/BG_SPRITE.png" id="2_d5ssm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_owmyu"]
+font_size = 26
+
+[node name="Playstate" type="Node2D"]
+script = ExtResource("1_n5bnh")
+
+[node name="BgSprite" type="Sprite2D" parent="."]
+modulate = Color(0.560784, 0.560784, 0.560784, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(320, 512)
+scale = Vector2(8, 8)
+texture = ExtResource("2_d5ssm")
+
+[node name="Playfield" parent="." instance=ExtResource("1_1cxk2")]
+position = Vector2(320, 900)
+scale = Vector2(4, 4)
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(320, 512)
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = 502.0
+offset_right = 420.0
+offset_bottom = 582.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START !!!!"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 289.0
+offset_right = 427.0
+offset_bottom = 403.0
+text = "COMBO"
+label_settings = SubResource("LabelSettings_owmyu")
+horizontal_alignment = 1
+
+[node name="NUMBERSPAWNED" type="Label" parent="."]
+offset_left = 213.0
+offset_top = 321.0
+offset_right = 430.0
+offset_bottom = 435.0
+text = "#
+"
+label_settings = SubResource("LabelSettings_owmyu")
+horizontal_alignment = 1

@@ -5,6 +5,7 @@ class_name Note
 var StrumTime := 0
 var NoteData := 0
 var CanBeHit := false
+var NoteSpeed := 1.0
 
 
 # Called when the node enters the scene tree for the first time.

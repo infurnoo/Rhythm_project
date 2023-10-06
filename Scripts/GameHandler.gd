@@ -1,5 +1,8 @@
 extends Node
 
+# used to manage between states and scenes of game 
+# work on later
+
 var CurrentConductor : Conductor
 var CurrentState = "Intro"
 

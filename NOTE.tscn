@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cykes6cifphec"]
 
 [ext_resource type="Texture2D" uid="uid://d2tyc4ad0fj51" path="res://Sprites/Arrows_Sprites.png" id="1_5185a"]
-[ext_resource type="Script" path="res://GameNote.gd" id="2_lwfn8"]
+[ext_resource type="Script" path="res://Scripts/GameNote.gd" id="2_rqcqs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0eoy"]
 atlas = ExtResource("1_5185a")
@@ -106,4 +106,4 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lhmtq")
 animation = &"0_incoming"
-script = ExtResource("2_lwfn8")
+script = ExtResource("2_rqcqs")
